@@ -1,1 +1,55 @@
-<p>Здесь будет наш проект</p>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="http://fonts.googleapis.com/css?family=Tangerine"
+              rel="stylesheet" type="text/css">
+        <link type="text/css" href="layout.css" rel="stylesheet">
+        <title>Lotka-Volterra</title>
+    </head>
+    <body onload="start();">
+        <h1>ИДМ-13-07<br>Алгоритмическая симуляция</h1>
+        <!-- left panel. -->
+        <section>
+            <h2>Краткое описание</h2>
+            <p>Волки едят овец. Но чем меньше становится овец, тем меньше
+            волки могут питаться. Голодные волки умирают. Но когда волки умирают,
+            никто не убивает овец, что дает им возможность увеличивать популяцию.
+            Наличие еды для волков снова приводит к увеличению числа хищников.
+            Подробнее о методе <a href="http://en.wikipedia.org/wiki/Lotka-Volterra_equation">
+            Лотки-Вольтерра</a>.</p>
+            <ul>
+                <li>Волки едят оленей и размножаются.
+                Если они не едят, они умирают.</li>
+                <li>Овцы размножаются быстрее, если их перестают убивать.</li>
+            </ul>
+            <h2>Параметры</h2>
+            <table><tbody>
+                <tr><th>Время, затраченное на каждый шаг:</th>
+                    <td contentEditable id="speed">10</td>
+                <tr><th>Первоначальный процент волков:</th>
+                    <td contentEditable id="iNumMan">0.02</td>
+                <tr><th>Первоначальный процент овец:</th>
+                    <td contentEditable id="iNumDeer">0.2</td>
+                <tr><th>Вероятность смерти волков:</th>
+                    <td contentEditable id="pDeleteMan">0.02</td>
+                <tr><th>Вероятность рождения волков:</th>
+                    <td contentEditable id="pNewMan">0.9</td>
+                <tr><th>Вероятность рождения овец:</th>
+                    <td contentEditable id="pNewDeer">0.04</td>
+            </tbody></table>
+        </section>
+        <!-- core app. -->
+        <div>
+            <canvas id="can" height="400" width="400">
+                Note: you need html5 to run this.
+            </canvas>
+            <form action="javascript:void(0);">
+                <button title="Start simulation" onclick="start();">
+                    Начать симуляцию
+                </button>
+            </form>
+        </div>
+        <script type="text/javascript" src="lotka.js"></script>
+    </body>
+</html>
